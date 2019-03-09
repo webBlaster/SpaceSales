@@ -1,0 +1,93 @@
+/*body*/
+body{
+    background-image: url(presentation.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*nagivation section*/
+
+    nav ul li{
+        display: inline-block;
+        list-style-type: none;
+        margin:0;
+        border:none;
+        
+        text-align:center;
+        cursor:pointer;
+    }
+        a{
+            color:white;
+        
+        }
+/*the login and sign up forms*/
+#forms{
+    margin-top:150px;
+    margin-left:20%;
+}
+#signin,#signup{
+    display:inline-block;
+    background-color:rgb(247, 247, 247);
+    width:30%;
+    border-radius:4px;
+    padding:30px;
+    margin-left:5%;
+    text-align:center;
+}
+    
+    #forms input{
+        padding:5px;
+        border:none;
+    }
+
+    #notify,#info{
+        color:red;
+    }
+
+@media screen and (max-width:650px){
+    #signin,#signup{
+        display:block;
+        width:80%;
+        margin-left:6%;
+        margin-bottom:50px;
+    }
+    #forms{
+        margin-left:7%;
+    }
+    nav ul li{
+        display:inline-block;
+    }
+}
+/*the footer*/
+/*Agents Div Styling*/
+#agents-div{
+    color:white;
+    background:rgba(0, 0, 0, 0.514);
+    text-align:center;
+    width:100%;
+    height:100%;
+    padding-top:80px;
+    padding-bottom:60px;
+}
+    #agent-su,#agent-si{
+        background:rgb(247, 247, 247);
+        width:30%;  
+        margin:auto;
+        padding:30px;
+        border-radius:5px;
+    }
+       #agent-si input, #agent-su input{
+           width:90%;
+           margin:auto;
+           border:none;
+           margin-bottom:20px; 
+        }
+@media screen and (max-width:650px){
+    #agent-si,#agent-su{
+        width:80%;
+    }
+}
+
+#visible{
+    transition:0.5s;
+}

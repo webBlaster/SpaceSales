@@ -1,0 +1,78 @@
+body{
+    height: 100%;
+    transition:0.9s;
+}
+#nav{
+    background-color:rgba(225, 233, 225, 0.5);
+    padding:.5%;
+    box-shadow: 0 0 9px 0 rgba(34, 33, 33, 0.87);
+}
+#nav ul{
+    margin:0;
+}
+#nav a{
+    color:grey;
+    font-weight: 500;
+    font-size:17px;
+}
+#nav ul li{
+    list-style-type: none;
+    float:left;
+}
+br{
+    clear:left;
+}
+/*add new button */
+#addnew{
+    position: absolute;
+    bottom:0;
+    left:92%;
+    border-radius:600px;
+    text-align:center;
+    width:60px;
+    height:60px;
+    font-size:45px;
+    border:none;
+    background-color:rgb(245, 10, 10);
+    color:white;
+    box-shadow: 0 0 9px 0 rgba(34, 33, 33, 0.87);
+}
+#loader p{
+    font-size:30px;
+    color:rgba(128, 128, 128, 0.596);
+    text-align:center;
+    padding-top:300px;
+}
+#addnew:hover{
+    transition:0.9s;
+    background-color:rgba(0, 0, 255, 0.623);
+    cursor:pointer;
+}
+#file{
+    margin-bottom:3px;
+}
+#fileuploader{
+    transition:0.5s;
+    width:60%;
+    text-align:center;
+    margin:auto;
+    padding-top:150px;
+}
+#fileuploader form input, textarea{
+    text-align:center;
+}
+
+@media screen and (max-width:700px){
+    #nav ul{
+        padding:5px;
+    }
+    #loader p{
+        padding-top:253px;
+    }
+    #addnew{
+        width:50px;
+        height:50px;
+        font-size:37px;
+        left:83%;
+    }
+} 

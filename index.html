@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="public/bootstrap.css">
+    <link rel="stylesheet" href ="public/style.css">   
+    <script src="js/bscripts/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">SpaceSales</a>
+                    <button class="collapsed navbar-toggle" data-toggle="collapse" data-target="#mydropdownmenu">
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>   
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mydropdownmenu">
+            <ul class="nav navbar-nav">
+                <li><a href="#" id="home-li">Home</a></li>
+                <li><a href="#" id="agents-li">Agents</a></li>
+                <li><a href="view/spacefeeds.html" id="feeds-li">Spaces</a></li>
+            </ul>
+            </div>
+            </div>
+        </nav>
+        <div id="forms">
+            <div id="signin">
+                <h2>Sign in</h2>
+                <form id="si-form">
+                    <input name="si-email" id="si-email" class="form-control" type="text" placeholder="example@email"><br>
+                    <input name="si-password" id="si-password" class="form-control" type="password" placeholder="password"><br>
+                    <input name="si-submit" id="si-submit" class="form-control btn btn-primary" type="submit">
+                </form>
+                <p id="notify"></p>
+            </div>
+
+            <div id="signup">
+                <form id="su-form">
+                    <h2>Sign up and Get started</h2>
+                    <input name="su-email" id="su-email" class="form-control" type="email" placeholder="example@email"><br>
+                    <input name="su-password" id="su-password" class="form-control" type="password" placeholder="password"><br>
+                    <input id="su-password2" class="form-control" type="password" placeholder="Confirm password"><br>
+                    <input name="su-submit" id="su-submit" class="form-control btn btn-primary" type="submit">
+                </form>
+                <p id="info"></p>
+            </div>
+        </div>
+
+        <!--Agents Login and Sign up -->
+        <div class="container hidden" id="agents-div">
+            <h1>Hey You, Become An Agent . Come Work With Us</h1>
+            <h4>Sign Up With Us</h4>
+            <div id="agent-su">
+                <form id="agentsu-form">
+                    <input name="agentsu-name" id="agentsu-name" type="text" class="form-control" placeholder="name">
+                    <input name="agentsu-email" id="agentsu-email" type="text" class="form-control" placeholder ="email">
+                    <input name="agentsu-password" id="agentsu-password" type="password" class="form-control" placeholder="password">
+                    <input id="agentsu-submit" type="submit" class="form-control btn btn-primary">
+                </form>
+            </div>
+            <h2 style="margin-top:46px;">Already have an account?</h2>
+            <h4>Sign In</h4>
+            <div id="agent-si">
+                <form id="agentsi-form">
+                    <input name="agentsi-email" id="agentsi-email" type="text" class="form-control" placeholder ="email">
+                    <input name="agentsi-password" id="agentsi-password" type="password" class="form-control" placeholder="password">
+                    <input id="agentsi-submit" type="submit" class="form-control btn btn-primary">
+                </form>
+            </div>
+        </div>
+
+        <footer>
+        </footer>
+       <!-- <script src="js/jquery-slim.min.js"></script>-->
+        <script src="js/bscripts/popper.min.js"></script>
+        <script src="js/bscripts/util.js"></script>
+        <script src="js/bscripts/dropdown.js"></script>
+        <script src="js/bscripts/collapse.js"></script>
+        <script src="js/switcher.js"></script>
+        <script src="js/user.js"></script>
+        <script src="js/agent.js"></script>
+</body>
+</html>
