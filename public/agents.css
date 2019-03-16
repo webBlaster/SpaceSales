@@ -1,11 +1,16 @@
 body{
     height: 100%;
     transition:0.9s;
+    font-family: 'Open Sans', sans-serif;
 }
 #nav{
-    background-color:rgba(225, 233, 225, 0.5);
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:rgba(225, 233, 225, 1);
     padding:.5%;
     box-shadow: 0 0 9px 0 rgba(34, 33, 33, 0.87);
+    margin-bottom:50px;
 }
 #nav ul{
     margin:0;
@@ -24,7 +29,7 @@ br{
 }
 /*add new button */
 #addnew{
-    position: absolute;
+    position:fixed;
     bottom:0;
     left:92%;
     border-radius:600px;
@@ -37,7 +42,7 @@ br{
     color:white;
     box-shadow: 0 0 9px 0 rgba(34, 33, 33, 0.87);
 }
-#loader p{
+#none{
     font-size:30px;
     color:rgba(128, 128, 128, 0.596);
     text-align:center;
@@ -48,8 +53,34 @@ br{
     background-color:rgba(0, 0, 255, 0.623);
     cursor:pointer;
 }
+#loader{
+    width:100%;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.card{
+    box-shadow:0 0 4px 0 rgba(34, 33, 33, 0.87);
+    width:90%;
+    margin:10px auto;
+    border:none;
+    border-radius: 2px;
+    text-align:center;
+}
+.card button{
+    margin: 24px auto;
+
+}
+.strings{
+    padding:30px;
+}
+
 #file{
     margin-bottom:3px;
+}
+#back{
+    margin-top:50px;
+    position:fixed;
 }
 #fileuploader{
     transition:0.5s;
@@ -66,7 +97,7 @@ br{
     #nav ul{
         padding:5px;
     }
-    #loader p{
+    #none{
         padding-top:253px;
     }
     #addnew{
@@ -74,5 +105,8 @@ br{
         height:50px;
         font-size:37px;
         left:83%;
+    }
+    #loader{
+        display:block;
     }
 } 

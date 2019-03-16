@@ -1,3 +1,6 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
 #nav{
     background-color:rgb(247, 247, 247);
     width:100%;
@@ -6,38 +9,30 @@
     width: 100%;
     top: 0;
     z-index: 2;
+    padding:10px;
 }
 a{
-    color:white;
+    color:black;
 }
 #nav li{
     display: inline-block;
-    padding:1%;
 }
 #nav input{
     border:none;
     border-radius:3px;
     margin:0;
-    padding:2px;
 }
 #search{
-    width:20%;
     border-radius:5px;
-    background:gold;
+    background:rgb(7, 7, 231);
     border:none;
     color:white;
 }
 form{
-    margin-left:70%;
-    padding:0;
-    border:none;
-    display:inline-block;
+    float:right;
+    display:block;
 }
-@media screen and (max-width:700px){
-    form{
-        margin-left:23%;
-    }
-} 
+
 /*feed boxes*/
 .container{
     widows: 100%;
@@ -53,11 +48,20 @@ form{
 .feed-block{
     width:90%;
     text-align:center;
-    padding:20px;
     border-radius:10px;
     margin:auto;
     margin-bottom: 15px;
     box-shadow: 0 1px 2px 0 rgba(56, 54, 54, 0.87);
+    background-color:rgb(236, 232, 232);
+}
+.info{
+    padding:30px;
+}
+.info h2{
+    color:green;
+}
+.green{
+    margin-bottom:30px;
 }
 @media screen and (max-width:650px){
     #feeds{
@@ -65,3 +69,16 @@ form{
         display:inline-block;
     }
 } 
+/*view product css*/
+#view{
+    text-align:center;
+    padding:10px;
+    width:100%;
+}
+#view img{
+    width:100%;
+    margin: 60px auto;
+}
+#view h2{
+    font-size:18px;
+}
