@@ -92,7 +92,19 @@ br{
 #fileuploader form input, textarea{
     text-align:center;
 }
+#makesure{
+    position:fixed;
+    z-index:4;
+    top:260px;
+    width:70%;
+    left:15%;
+    padding:50px;
+    text-align:center;
+    background:rgba(128, 128, 128, 0.438);
+    margin:20px auto;
 
+    border-radius:10px;
+}
 @media screen and (max-width:700px){
     #nav ul{
         padding:5px;

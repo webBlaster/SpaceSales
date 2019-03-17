@@ -28,6 +28,8 @@ $.ajax({
                 $("#loader").append(template);
             });
             //add event listeners to the template buttons
+
+            //edits the product
             $('.edit').click((e)=>{
                 let productid = e.target.parentElement.getAttribute('id');
                 let data = {id:productid};
@@ -37,7 +39,7 @@ $.ajax({
                     method:'post',
                     dataType:'json',
                     success:(response)=>{
-                        let template = `
+                        let template = `<div id="back" class="btn">back</div>
                         <div id="fileuploader">
                         <form id="fileuploader-form" data-id="${response[0].id}" enctype="multipart/form-data" >
                             <input id="location" class="form-control" type="text" value="${response[0].location}" placeholder="Location" name="location"><br>
@@ -45,7 +47,6 @@ $.ajax({
                             <textarea id="info" class="form-control"  placeholder="information" name="info">${response[0].description}</textarea><br>
                             <input id="image" type="file" name="file" value="${response[0].image}" class="form-control adjust"><br>
                             <input id="submit" class="btn btn-primary adjust form-control" type="submit" name="submit" value="submit">
-                            <button class="btn btn-primary">Back</button>
                         </form>
                         </div>`;
                         $('#loader').hide();
@@ -53,12 +54,43 @@ $.ajax({
                         $('#settings').html(template);
                         //function to validate the input then submit to the back end 
                         validatethensubmit('../agent/Editor.php',data.id);
+                        //event listener to the back button
+                        $('#back').click((e)=>{
+                            e.preventDefault();
+                            window.location.href="agents.html";
+                        });
                     }
                 });
             });
+            //removes the products
             $('.remove').click((e)=>{
-                let productid = e.target.getAttribute('id');
-
+                let productid = e.target.parentElement.getAttribute('id');
+                let template =`<div id="makesure">
+                    <h4>are you sure you want to remove this product</h4>
+                    <input id="${productid}" class="btn btn-primary" type="button" value="YES">
+                    <input id="no" class="btn btn-primary" type="button" value="NO">
+                </div>`;
+                $('body').html("");
+                $('body').append(template);
+                $('#'+productid).click((e)=>{
+                        e.preventDefault();
+                        let data = {id:productid};
+                        $.ajax({
+                            url:'../agent/Remove.php',
+                            data:data,
+                            method:'post',
+                            dataType:'json',
+                            success:(response)=>{
+                                window.location.href="agents.html"; 
+                            }
+                        });
+                    }
+                );
+                $('#no').click(
+                    ()=>{
+                        window.location.href="agents.html";
+                    }
+                );
             });
         }
     }

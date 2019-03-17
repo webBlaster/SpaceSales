@@ -51,8 +51,38 @@ class Agents extends Users {
         }
         
     }
-    public function editproduct($id){
-        echo "am working on".$id;
+    public function editproduct($location,$price,$info,$tempname,$id,$imagedir){
+        //delete image
+
+        //update the database
+        //move the new image to the folder
+        require("../Inc/Database.php");
+        $oldimgsql = "SELECT image FROM $this->tablename WHERE id =$id";
+        $oldimg = $conn->query($oldimgsql);
+        $result = $oldimg->fetchAll(PDO::FETCH_ASSOC);
+        $check = $result[0]['image'];
+        $extract = explode("/",$check);
+        $eximage = end($extract);
+        echo json_encode($eximage);
+        //store product info in the database
+        /*$sql = "UPDATE $this->tablename SET agent=$this->email,location=$location,description=$info,image=$imagedir,price=$price where id=$id";
+        if($conn->exec($sql)==1){
+            //delete image
+
+            //move image to image folder
+            move_uploaded_file($tempname,$imagedir);
+            $data = 1;
+            echo json_encode($data);
+        }else{
+            $data = 0;
+            echo json_encode($data);
+        }*/
+        
+    }
+    public function removeproduct($id){
+        //delete whole row in the db
+        $data = 1;
+        echo json_encode($data);
     }
 }
 

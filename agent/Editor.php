@@ -17,5 +17,5 @@ $authurl = '/SpaceSales/index.html';
 $accesspage = '/SpaceSales/view/agents.html';
 
 $Agents = new Agents('','',$password,$tablename,$authurl,$accesspage);
-$Agents->editproduct($id);
+$Agents->editproduct($location,$price,$info,$tempname,$id,$imagedir);
 ?>
