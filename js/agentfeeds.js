@@ -1,5 +1,18 @@
 
 $(document).ready(function(){
+    $.ajax({
+        url:'../agent/Authchecker.php',
+        method:'post',
+        dataType:'json',
+        success:(response)=>{
+            if(response==1){
+                console.log("working");
+            }
+            else{
+                window.location.href="../index.html";
+            }
+        }
+    });
 //load previously added products
 $.ajax({
     url:'../agent/Myspaces.php',

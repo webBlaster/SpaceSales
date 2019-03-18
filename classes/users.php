@@ -34,7 +34,7 @@ class Users{
                    
     }
     //authenticates a user
-    public function Login(){
+    public function Login($auth){
         require("../Inc/Database.php");
         $checksql = "SELECT * FROM $this->tablename WHERE email = '$this->email' AND password = '$this->password'";
         $checker = $conn->query($checksql);
@@ -42,7 +42,7 @@ class Users{
         if($checker->rowcount()>0){
             $data = $this->accesspage;
             session_start();
-            $_SESSION['auth']=true;
+            $_SESSION[$auth]=true;
             $_SESSION['email']= $this->email;
             echo json_encode($data);
 
@@ -60,9 +60,9 @@ class Users{
         header('location:http://'.DB_HOST.$this->authurl);
     }
     //checks authentication status if logged in or out
-    public function Authstatus(){
+    public function Authstatus($auth){
         session_start();
-        if(isset($_SESSION['auth'])){
+        if(isset($_SESSION[$auth])){
             $response = 1;
             echo json_encode($response);
         }

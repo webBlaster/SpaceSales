@@ -7,9 +7,10 @@ $password = MD5(htmlentities($_POST['si-password']));
 $tablename = 'userdetails';
 $authurl = '/SpaceSales/index.html';
 $accesspage = '/SpaceSales/view/spacefeeds.html';
+$auth = 'auth';
 
 //instantiate the user class ,set the arguments and call 
 //some of its methods
 $User = new Users($email,$password,$tablename,$authurl,$accesspage);
-$User->Login();
+$User->Login($auth);
 ?>
