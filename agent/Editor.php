@@ -15,7 +15,9 @@ $password = '';
 $tablename = "spaces";
 $authurl = '/SpaceSales/index.html';
 $accesspage = '/SpaceSales/view/agents.html';
+session_start();
+$email = $_SESSION['email'];
 
-$Agents = new Agents('','',$password,$tablename,$authurl,$accesspage);
+$Agents = new Agents('',$email,$password,$tablename,$authurl,$accesspage);
 $Agents->editproduct($location,$price,$info,$tempname,$id,$imagedir);
 ?>

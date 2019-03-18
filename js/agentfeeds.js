@@ -81,15 +81,19 @@ $.ajax({
                             method:'post',
                             dataType:'json',
                             success:(response)=>{
-                                window.location.href="agents.html"; 
+                                if(response==1){
+                                    window.location.href="agents.html"; 
+                                }
+                                
                             }
                         });
                     }
                 );
                 $('#no').click(
-                    ()=>{
-                        window.location.href="agents.html";
-                    }
+                   function (e){
+                       e.preventDefault;
+                       window.location.href="agents.html";
+                   }
                 );
             });
         }
@@ -158,7 +162,7 @@ function validatethensubmit(url,id){
                         success:(response)=>{
                             console.log(response);
                             $("#fileuploader").fadeOut();
-                            $('html').load('agents.html');
+                            $('body').load('agents.html');
                         }
                     });
                 }
