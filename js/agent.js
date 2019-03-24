@@ -42,7 +42,12 @@ let siValidator = (e) =>{
             dataType:'json',
             data:asidata,
             success:(response)=>{
-                window.location.href=response;
+                if(response==0){
+                    console.log('wrong details');
+                }else{
+                    window.location.href=response;
+                }
+                
             }
         });
     }

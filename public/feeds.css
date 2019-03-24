@@ -35,7 +35,7 @@ form{
 
 /*feed boxes*/
 .container{
-    widows: 100%;
+    width: 100%;
 }
 #feeds{
     margin-top:100px;
@@ -81,4 +81,8 @@ form{
 }
 #view h2{
     font-size:18px;
+}
+/*owner css*/
+#reachout{
+    margin-top:100px;
 }

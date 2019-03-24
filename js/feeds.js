@@ -73,7 +73,30 @@ function getfeeds(){
                             if(auth == false){
                                 window.location.href = "../index.html";
                             }
-                            console.log('guy chill out am thinking of a template to send you to');
+                            let template =`
+                            <div id="reachout" class="fluid-container">
+                            <h2>Drop your name and mobile number</h2>
+                            <input type="text" id="name" placeholder="Name" class="form-control"><br/>
+                            <input type="text" id="number" placeholder="Phone Number" class="form-control"><br/>
+                            <button id="submit" class="btn">Submit</button>
+                            </div>
+                            `;
+                            $('#main').html(template);
+                            $('#submit').click(()=>{
+                                const name = $('#name').val();
+                                const number = $('#number').val();
+                                const id = response[0].id;
+                                if(name && number !==''){
+                                    console.log('guy chill out am thinking of a template to send you to');
+                                    console.log(id);
+                                    
+
+                                }else{
+                                    console.log('fill in all parts');
+                                }
+                                
+
+                            });
                         });
                     }
                 });

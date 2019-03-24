@@ -15,5 +15,13 @@ class Pbc{
         $resultarray = $result->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($resultarray);
     }
+    public function notifyagent(){
+        //add user info and the product to the notice table of the agent to
+        
+    }
+
+    public function addtohistory(){
+
+    }
 }
 ?>
