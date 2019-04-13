@@ -43,7 +43,7 @@ class Users{
             $data = $this->accesspage;
             session_start();
             $_SESSION[$auth]=true;
-            $_SESSION['email']= $this->email;
+            $_SESSION[$auth.'email']= $this->email;
             echo json_encode($data);
 
         }else{
@@ -52,11 +52,11 @@ class Users{
         }        
     }
     //logs out a user by destroying the session variables
-    public function Logout(){
+    public function Logout($auth){
         require('../inc/Config.php');
         session_start();
-        session_unset();
-        session_destroy();
+        unset($_SESSION[$auth.'email']);
+        unset($_SESSION[$auth]);
         header('location:http://'.DB_HOST.$this->authurl);
     }
     //checks authentication status if logged in or out

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="../public/bootstrap.css">
+
     <link rel="stylesheet" href ="../public/feeds.css"> 
     <title>Feeds</title>
     <script src="../js/bscripts/jquery-2.2.4.min.js"></script>
@@ -12,13 +16,13 @@
 </head>
 <body>
        <div>
-        <ul id="nav">
-            <li id="state"><a href="../index.html">signin</a></li>
-                <form>
-                    <input type="text" placeholder="location">
-                    <input id="search" type="submit" value="search">
-                </form>
-        </ul>
+        <div id="nav">
+            <div id="righters">
+                <li id="history" class="right"><a href="#">History</a></li>
+            <li id="state" class="right"><a href="../index.html">Signin</a></li>   
+            <li class="right"><a href="../index.html">Search</a></li>  
+            </div> 
+        </div>
         <div class="container" id="main">
             <ul id="feeds">
              

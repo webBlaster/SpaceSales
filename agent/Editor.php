@@ -4,6 +4,7 @@ $location = $_POST['location'];
 $price = $_POST['price'];
 $info = $_POST['info'];
 $id = $_POST['id'];
+
 //image directory to be sent to db
 define("directory","../Spaceimage/");
 $tempname = $_FILES['file']['tmp_name'];

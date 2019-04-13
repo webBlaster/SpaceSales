@@ -1,37 +1,32 @@
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 #nav{
-    background-color:rgb(247, 247, 247);
+    background-color:rgb(32, 112, 179);
+    margin:0;
     width:100%;
     position: fixed;
-    box-shadow: 0 0 4px 0 rgba(34, 33, 33, 0.87);
     width: 100%;
     top: 0;
     z-index: 2;
-    padding:10px;
+    display:inline-block;
 }
 a{
-    color:black;
+    padding: 17.5px 12px;
+    color:#fff;
+    font-size:14px;
 }
-#nav li{
-    display: inline-block;
-}
-#nav input{
-    border:none;
-    border-radius:3px;
-    margin:0;
-}
-#search{
-    border-radius:5px;
-    background:rgb(7, 7, 231);
-    border:none;
-    color:white;
-}
-form{
+#righters{
+    padding:17.5px 0 17.5px 0;
+    display:inherit;
     float:right;
-    display:block;
 }
+.right{
+    margin-left:10px;
+    display:inline-block;
+    list-style: none;
+}
+
 
 /*feed boxes*/
 .container{
@@ -52,7 +47,6 @@ form{
     margin:auto;
     margin-bottom: 15px;
     box-shadow: 0 1px 2px 0 rgba(56, 54, 54, 0.87);
-    background-color:rgb(236, 232, 232);
 }
 .info{
     padding:30px;
@@ -62,6 +56,23 @@ form{
 }
 .green{
     margin-bottom:30px;
+}
+/*History feed styles*/
+#nohistory{
+    margin-top:200px;
+    text-align:center;
+    color:rgba(0, 0, 0, 0.24);
+}
+.user-history{
+    padding:15px;
+    text-align:center;
+     background-color:rgba(32, 113, 179, 0.11);
+    border:2px solid whitesmoke;
+    margin:10px auto;
+    width:90%;
+}
+.user-history h4{
+    text-align:inherit;
 }
 @media screen and (max-width:650px){
     #feeds{
@@ -85,4 +96,8 @@ form{
 /*owner css*/
 #reachout{
     margin-top:100px;
+}
+#getback{
+    margin-top:100px;
+    text-align: center;
 }

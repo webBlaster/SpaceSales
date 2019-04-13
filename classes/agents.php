@@ -15,17 +15,17 @@ class Agents extends Users {
                 $response = 0;
                 echo json_encode($response);
         }else{
-                $SQL = "INSERT INTO $this->tablename (username,email,password) VALUES ('$this->username','$this->email','$this->password')";
+                $SQL = "INSERT INTO $this->tablename (username,email,password,notification) VALUES ('$this->username','$this->email','$this->password',0)";
                 $conn->exec($SQL);
                 $response = 1;
                 echo json_encode($response);
             }
     }
 
-    public function uploadproductinfo($location,$price,$info,$tempname,$imagedir){
+    public function uploadproductinfo($title,$location,$price,$info,$tempname,$imagedir){
         require("../Inc/Database.php");
         //store product info in the database
-        $sql = "INSERT INTO $this->tablename (agent,location,description,image,price) VALUES ('$this->email','$location','$info','$imagedir','$price')";
+        $sql = "INSERT INTO $this->tablename (agent,title,location,description,image,price,status) VALUES ('$this->email','$title','$location','$info','$imagedir','$price','available')";
         if($conn->exec($sql)==1){
              //move image to image folder
             move_uploaded_file($tempname,$imagedir);
@@ -51,7 +51,7 @@ class Agents extends Users {
         }
         
     }
-    public function editproduct($location,$price,$info,$tempname,$id,$imagedir){
+    public function editproduct($title,$location,$price,$info,$tempname,$id,$imagedir){
         
         require("../Inc/Database.php");
         $oldimgsql = "SELECT image FROM $this->tablename WHERE id =$id";
@@ -60,7 +60,7 @@ class Agents extends Users {
         $check = $result[0]['image'];
         
         //store product info in the database
-        $sql = "UPDATE $this->tablename SET agent='$this->email',location = '$location',description = '$info',image = '$imagedir',price = '$price' WHERE id='$id'";
+        $sql = "UPDATE $this->tablename SET agent='$this->email',title = '$title',location = '$location',description = '$info',image = '$imagedir',price = '$price' WHERE id='$id'";
             if($conn->exec($sql)==1){
                 //delete image
                 $unlink = unlink($check);
@@ -93,6 +93,42 @@ class Agents extends Users {
             echo json_encode($data);
         }
     }
+    public function notification($agent){
+        //get all negotiations where agents is agent
+        require('../Inc/Database.php');
+        $sql = "SELECT * FROM negotiations WHERE agent='$agent'";
+        $nsql = "SELECT notification FROM $this->tablename WHERE email='$agent'";
+        $notification = $conn->query($nsql);
+        $notification = $notification->fetchAll(PDO::FETCH_ASSOC);
+        $notification = $notification[0]['notification'];
+        //
+        $negotiations = $conn->query($sql);
+        $negotiations =array_reverse($negotiations->fetchAll(PDO::FETCH_ASSOC));
+        $old = $notification;
+        $new = count($negotiations);
+        //logic to decide whether there is a new notification
+        if($new>0){
+            if($new>$old){
+                $data = array();
+                $data['negotiations'] = $negotiations;
+                $data['new'] = true;
+                echo json_encode($data);
+                $updatesql = "UPDATE $this->tablename SET notification='$new' WHERE email='$agent'";
+                $update = $conn->exec($updatesql);
+            }else{
+                $data = array();
+                $data['negotiations'] = $negotiations;
+                $data['new'] = false;
+                echo json_encode($data);
+            }
+          
+        }else{
+            $data = 0;
+            echo json_encode($data);
+        }
+        //
+    }
 }
+
 
 ?>

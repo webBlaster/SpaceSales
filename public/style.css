@@ -1,25 +1,26 @@
 /*body*/
 body{
-    background-image: url(presentation.jpeg);
+    background-image: url(tryout.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 /*nagivation section*/
-
+nav{
+    background-color:rgb(32, 112, 179) !important;
+    border:none !important;
+}
     nav ul li{
         display: inline-block;
         list-style-type: none;
         margin:0;
         border:none;
-        
         text-align:center;
         cursor:pointer;
     }
         a{
-            color:white;
-        
+            color:#fff !important;
         }
 /*the login and sign up forms*/
 #forms{
@@ -70,6 +71,9 @@ body{
     padding-top:80px;
     padding-bottom:60px;
 }
+    #agent-si,#agent-su{
+        color:black;
+    }
     #agent-su,#agent-si{
         background:rgb(247, 247, 247);
         width:30%;  
