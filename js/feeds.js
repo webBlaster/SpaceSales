@@ -32,7 +32,7 @@ function checker() {
               } else {
                 $("#history").html('<a href="">Back</a>');
                 $("#main").html("");
-                $("#main").css("margin-top", "40px");
+                $("#main").css("margin-top", "60px");
                 let history = response;
                 $.each(history, (key) => {
                   console.log(history);
