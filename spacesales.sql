@@ -17,14 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `spacesales`
---
-CREATE DATABASE IF NOT EXISTS `spacesales` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `spacesales`;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `agentdetails`
 --
 
