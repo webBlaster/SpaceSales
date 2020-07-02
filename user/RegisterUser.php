@@ -6,8 +6,8 @@ require_once("../classes/users.php");
 $email=htmlentities($_POST['su-email']);
 $password = MD5(htmlentities($_POST['su-password']));
 $tablename = 'userdetails';
-$authurl = '/SpaceSales/index.html';
-$accesspage = '/SpaceSales/view/spacefeeds.html';
+$authurl = '/index.html';
+$accesspage = '/view/spacefeeds.html';
 
 //initializing a new user class and calling some of its methods
 $User = new Users($email,$password,$tablename,$authurl,$accesspage);

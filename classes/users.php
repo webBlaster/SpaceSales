@@ -27,7 +27,6 @@ class Users{
             }else{
                     $SQL = "INSERT INTO $this->tablename (email,password) VALUES ('$this->email','$this->password')";
                     $conn->exec($SQL);
-                    $responseclone = "/SpaceSales/view/spacefeeds.html";
                     $response = $this->accesspage;
                     echo json_encode($response);
                 }
@@ -53,7 +52,7 @@ class Users{
     }
     //logs out a user by destroying the session variables
     public function Logout($auth){
-        require('../inc/Config.php');
+        require('../Inc/Config.php');
         session_start();
         unset($_SESSION[$auth.'email']);
         unset($_SESSION[$auth]);
