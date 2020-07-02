@@ -108,19 +108,19 @@ $(document).ready(function() {
                         }" enctype="multipart/form-data" >
                           <input id="title" class="form-control" type="text" placeholder="Title" value="${
                             response[0].title
-                          }" name="title"><br/>
+                          }" name="title" required><br/>
                             <input id="location" class="form-control" type="text" value="${
                               response[0].location
-                            }" placeholder="Location" name="location"><br>
+                            }" placeholder="Location" name="location" required><br>
                             <input id="price" class="form-control" type="text" value="${
                               response[0].price
-                            }" placeholder="Price" name="price"><br>
-                            <textarea id="info" class="form-control"  placeholder="information" name="info">${
+                            }" placeholder="Price" name="price" required><br>
+                            <textarea id="info" class="form-control"  placeholder="information" name="info" required>${
                               response[0].description
                             }</textarea><br>
                             <input id="image" type="file" name="file" value="${
                               response[0].image
-                            }" class="form-control adjust"><br>
+                            }" class="form-control adjust" required><br>
                             <input id="submit" class="btn btn-primary adjust form-control" type="submit" name="submit" value="submit">
                         </form>
                         </div>`;
@@ -177,11 +177,11 @@ $(document).ready(function() {
     let template = `<div id="back" class="btn">back</div>
         <div id="fileuploader">
         <form id="fileuploader-form" enctype="multipart/form-data" >
-            <input id="title" class="form-control" type="text" placeholder="Title" name="title"><br/>
-            <input id="location" class="form-control" type="text" placeholder="Location" name="location"><br>
-            <input id="price" class="form-control" type="text" placeholder="Price" name="price"><br>
-            <textarea id="info" class="form-control"  placeholder="information" name="info"></textarea><br>
-            <input id="image" type="file" name="file" class="form-control adjust"><br>
+            <input id="title" class="form-control" type="text" placeholder="Title" name="title" required><br/>
+            <input id="location" class="form-control" type="text" placeholder="Location" name="location" required><br>
+            <input id="price" class="form-control" type="text" placeholder="Price" name="price" required><br>
+            <textarea id="info" class="form-control"  placeholder="information" name="info" required></textarea><br>
+            <input id="image" type="file" name="file" class="form-control adjust" required><br>
             <input id="submit" class="btn btn-primary adjust form-control" type="submit" name="submit" value="submit">
         </form>
         </div>`;
