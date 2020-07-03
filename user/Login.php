@@ -5,8 +5,8 @@ require('../classes/users.php');
 $email = htmlentities($_POST['si-email']);
 $password = MD5(htmlentities($_POST['si-password']));
 $tablename = 'userdetails';
-$authurl = '/SpaceSales/index.html';
-$accesspage = '/SpaceSales/view/spacefeeds.html';
+$authurl = '/index.html';
+$accesspage = '/view/spacefeeds.html';
 $auth = 'auth';
 
 //instantiate the user class ,set the arguments and call 
