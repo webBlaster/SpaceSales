@@ -56,7 +56,7 @@ class Users{
         session_start();
         unset($_SESSION[$auth.'email']);
         unset($_SESSION[$auth]);
-        header('location:http://'.DB_HOST.$this->authurl);
+        header('location:https://'.URL.$this->authurl);
     }
     //checks authentication status if logged in or out
     public function Authstatus($auth){

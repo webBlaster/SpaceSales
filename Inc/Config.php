@@ -4,6 +4,7 @@ define("BASE_URL","/");
 define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"]."/");
 
 //absolute server paths throughout all the code
+define("URL", "spacesales.herokuapp.com");
 define("DB_HOST","us-cdbr-east-02.cleardb.com");
 define("DB_NAME","heroku_143e51e34d52c49");
 define("DB_PORT","3306");//default:3306
