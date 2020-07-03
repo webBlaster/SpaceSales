@@ -14,8 +14,8 @@ $imagedir = directory.$name;
 $password = '';
 $tablename = "spaces";
 $auth = "agentauth";
-$authurl = '/SpaceSales/index.html';
-$accesspage = '/SpaceSales/view/agents.html';
+$authurl = '/index.html';
+$accesspage = '/view/agents.html';
 session_start();
 $email = $_SESSION[$auth.'email'];
 
