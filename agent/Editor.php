@@ -14,8 +14,8 @@ $name = rand(100,999).'.'.$Ext;
 $imagedir = directory.$name;
 $password = '';
 $tablename = "spaces";
-$authurl = '/SpaceSales/index.html';
-$accesspage = '/SpaceSales/view/agents.html';
+$authurl = '/index.html';
+$accesspage = '/view/agents.html';
 session_start();
 $email = $_SESSION['email'];
 
