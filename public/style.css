@@ -67,7 +67,7 @@ nav{
     background:rgba(0, 0, 0, 0.514);
     text-align:center;
     width:100%;
-    height:100%;
+    height:100vh;
     padding-top:80px;
     padding-bottom:60px;
 }
@@ -78,7 +78,9 @@ nav{
         background:rgb(247, 247, 247);
         width:30%;  
         margin:auto;
+        margin-left:5%;
         padding:30px;
+        display: inline-block;
         border-radius:5px;
     }
        #agent-si input, #agent-su input{
@@ -88,8 +90,13 @@ nav{
            margin-bottom:20px; 
         }
 @media screen and (max-width:650px){
+    #agents-div {
+        height: 100%;
+    }
     #agent-si,#agent-su{
         width:80%;
+        margin-left:6%;
+        margin-bottom:50px;
     }
 }
 
