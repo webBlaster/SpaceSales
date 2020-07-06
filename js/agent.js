@@ -9,9 +9,13 @@ let suValidator = (e) => {
     const asuName = $('#agentsu-name').val();
     const asuEmail = $('#agentsu-email').val();
     const asuPassword = $('#agentsu-password').val();
+    const signupError = $('.signup-error');
+    const signupResponse = $('.signup-success');
     e.preventDefault();
     if((asuEmail && asuPassword && asuName )===''){
         console.log('fill in empty parts');
+        signupError.html('fill in empty parts');
+
     }else{
         const asudata = $('#agentsu-form').serialize();
         console.log('signing up.. sending to back end');
@@ -22,6 +26,7 @@ let suValidator = (e) => {
             data:asudata,
             success:(response)=>{
                 console.log('signed up');
+                signupResponse.html('signed up');
             }
         });
     }
@@ -30,9 +35,11 @@ let suValidator = (e) => {
 let siValidator = (e) =>{
     const asiEmail = $('#agentsi-email').val();
     const asiPassword = $('#agentsi-password').val();
+    const signinResponse = $('.signin-error');
     e.preventDefault();
     if((asiEmail && asiPassword )===''){
         console.log('fill in empty parts');
+        signinResponse.html('fill in empty parts');
     }else{
         const asidata = $('#agentsi-form').serialize();
         console.log('logging in...');
@@ -44,6 +51,7 @@ let siValidator = (e) =>{
             success:(response)=>{
                 if(response==0){
                     console.log('wrong details');
+                    signinResponse.html('wrong details');
                 }else{
                     window.location.href=response;
                 }
