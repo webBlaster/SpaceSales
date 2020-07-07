@@ -33,7 +33,7 @@ br{
 /*add new button */
 #addnew{
     position:fixed;
-    bottom:0;
+    bottom:5%;
     left:92%;
     border-radius:600px;
     text-align:center;
@@ -53,7 +53,7 @@ br{
 }
 #addnew:hover{
     transition:0.9s;
-    background-color:rgba(0, 0, 255, 0.623);
+    background-color:rgba(245, 10, 10, 0.637);
     cursor:pointer;
 }
 #loader{
